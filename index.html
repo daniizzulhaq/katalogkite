@@ -59,7 +59,7 @@
 
         /* Navbar */
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             padding: 15px 0;
@@ -77,7 +77,7 @@
         .navbar-brand {
             font-weight: 800;
             font-size: 1.5rem;
-            color: var(--primary-color) !important;
+            color: white !important;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -94,18 +94,20 @@
         }
 
         .nav-link {
-            color: var(--dark-text) !important;
+            color: white !important;
             font-weight: 600;
             padding: 8px 20px !important;
             margin: 0 5px;
             border-radius: 25px;
             transition: all 0.3s ease;
+            opacity: 0.9;
         }
 
         .nav-link:hover, .nav-link.active {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: rgba(255, 255, 255, 0.2);
             color: white !important;
             transform: translateY(-2px);
+            opacity: 1;
         }
 
         /* Hero Section */
@@ -621,7 +623,7 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <img src="logo.png" alt="Logo">
@@ -658,7 +660,7 @@
                 <button class="btn btn-primary-custom btn-hero" onclick="scrollToProducts()">
                     <i class="fas fa-shopping-bag"></i> Lihat Katalog
                 </button>
-                <a href="https://wa.me/6282114811417" target="_blank" class="btn btn-outline-custom btn-hero">
+                <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline-custom btn-hero">
                     <i class="fab fa-whatsapp"></i> Hubungi Kami
                 </a>
             </div>
@@ -750,7 +752,7 @@
                     <h4>🪁 Layang-Layang Indah</h4>
                     <p>Toko online terpercaya untuk layang-layang berkualitas tinggi. Kami melayani pengiriman ke seluruh Indonesia.</p>
                     <div class="social-links">
-                        <a href="https://wa.me/6282114811417" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
@@ -772,8 +774,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Hubungi Kami</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Jakarta Selatan, DKI JAKARTA</p>
-                    <p><i class="fas fa-phone"></i> +62 821-1481-1417</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Semarang, Jawa Tengah</p>
+                    <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
                     <p><i class="fas fa-envelope"></i> info@layangindah.com</p>
                     <p><i class="fas fa-clock"></i> Senin - Minggu: 08:00 - 20:00</p>
                 </div>
@@ -854,7 +856,7 @@
                 category: "premium",
                 badge: "New Tech",
                 emoji: "💡",
-                image: "night.png"
+                image: "led.png"
             },
             { 
                 id: 8, 
@@ -874,6 +876,34 @@
                 badge: "Hot",
                 emoji: "🦅",
                 image: "giant.png"
+            },
+            { 
+                id: 10, 
+                name: "Layang-Layang Wayang Kulit", 
+                desc: "Desain unik terinspirasi wayang kulit tradisional Indonesia dengan detail yang memukau", 
+                price: 50000, 
+                category: "tradisional",
+                emoji: "🎪",
+                image: "wayang.png"
+            },
+            { 
+                id: 11, 
+                name: "Layang-Layang Speed Racer", 
+                desc: "Dirancang khusus untuk kecepatan tinggi dan manuver cepat, favorit para enthusiast", 
+                price: 55000, 
+                category: "modern",
+                badge: "Fast",
+                emoji: "⚡",
+                image: "speed.png"
+            },
+            { 
+                id: 12, 
+                name: "Layang-Layang Pembelajaran", 
+                desc: "Set lengkap untuk anak belajar membuat dan menerbangkan layang-layang dengan panduan lengkap", 
+                price: 30000, 
+                category: "anak",
+                emoji: "📚",
+                image: "belajar.png"
             }
         ];
 
@@ -917,7 +947,7 @@
                         <p class="product-desc">${product.desc}</p>
                         <div class="product-footer">
                             <div class="product-price">Rp ${product.price.toLocaleString('id-ID')}</div>
-                            <a href="https://wa.me/6282114811417?text=${encodeURIComponent(`Halo, saya ingin memesan ${product.name} seharga Rp ${product.price.toLocaleString('id-ID')}`)}" 
+                            <a href="https://wa.me/6281234567890?text=${encodeURIComponent(`Halo, saya ingin memesan ${product.name} seharga Rp ${product.price.toLocaleString('id-ID')}`)}" 
                                target="_blank" 
                                class="btn-order">
                                 <i class="fab fa-whatsapp"></i>
