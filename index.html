@@ -267,6 +267,9 @@
             position: relative;
             cursor: pointer;
             animation: fadeIn 0.6s ease;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
         }
 
         @keyframes fadeIn {
@@ -300,7 +303,7 @@
         }
 
         .product-img {
-            height: 280px;
+            height: 350px;
             background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
             display: flex;
             align-items: center;
@@ -348,6 +351,9 @@
 
         .product-body {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-category {
@@ -373,12 +379,9 @@
         .product-desc {
             color: #64748b;
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
             margin-bottom: 20px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            flex-grow: 1;
         }
 
         .product-footer {
@@ -387,6 +390,7 @@
             align-items: center;
             padding-top: 15px;
             border-top: 2px solid #f1f5f9;
+            margin-top: auto;
         }
 
         .product-price {
@@ -627,7 +631,7 @@
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <img src="logo.png" alt="Logo">
-                <span>Sky Dream</span>
+                <span>Layang-Layang Indah</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -635,16 +639,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">Beranda</a>
+                        <a class="nav-link" href="index.html#home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#products">Produk</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#tentang">Tentang</a>
+                        <a class="nav-link" href="index.html#products">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
+                         <a class="nav-link" href="desain.html">Kite Designer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#kontak">Kontak</a>
                     </li>
                 </ul>
             </div>
@@ -678,17 +685,11 @@
                 <button class="filter-btn active" data-category="all">
                     <i class="fas fa-th"></i> Semua Produk
                 </button>
-                <button class="filter-btn" data-category="tradisional">
-                    <i class="fas fa-landmark"></i> Tradisional
+                <button class="filter-btn" data-category="kite">
+                    <i class="fas fa-landmark"></i> kite
                 </button>
                 <button class="filter-btn" data-category="modern">
                     <i class="fas fa-star"></i> Modern
-                </button>
-                <button class="filter-btn" data-category="anak">
-                    <i class="fas fa-child"></i> Untuk Anak
-                </button>
-                <button class="filter-btn" data-category="premium">
-                    <i class="fas fa-crown"></i> Premium
                 </button>
             </div>
         </div>
@@ -762,7 +763,6 @@
                     <h4>Navigasi</h4>
                     <a href="#home">Beranda</a>
                     <a href="#products">Produk</a>
-                    <a href="#tentang">Tentang Kami</a>
                     <a href="#kontak">Kontak</a>
                 </div>
                 <div class="footer-section">
@@ -774,8 +774,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Hubungi Kami</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Jakarta Selatan, DKI JAKARTA</p>
-                    <p><i class="fas fa-phone"></i> +6282114811417</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jakarta Selatan, DKI Jakarta</p>
+                    <p><i class="fas fa-phone"></i> +62 821-1481-1417</p>
                     <p><i class="fas fa-envelope"></i> info@layangindah.com</p>
                     <p><i class="fas fa-clock"></i> Senin - Minggu: 08:00 - 20:00</p>
                 </div>
@@ -791,94 +791,45 @@
         const products = [
             { 
                 id: 1, 
-                name: "Layang-Layang Tradisional Jawa", 
-                desc: "Layang-layang dengan desain tradisional Jawa yang elegan, terbuat dari kertas berkualitas tinggi dan kerangka bambu yang kuat", 
-                price: 25000, 
-                category: "tradisional",
+                name: "Pilot/Lifter Kite", 
+                desc: "A pilot/lifter is a kite used to lift a show kite. We offer pilots in two materials: ripstop and parachute. Prices vary for each material. We offer two pilot sizes: 240cm and 320cm. We offer high-quality, affordable products.", 
+                price: "Contact Us", 
+                category: "kite",
                 badge: "Best Seller",
                 emoji: "🪁",
-                image: "tradisional.png"
+                image: "pilot.jpg"
             },
             { 
                 id: 2, 
-                name: "Layang-Layang Rainbow Modern", 
-                desc: "Layang-layang dengan warna-warna pelangi yang cerah dan desain aerodinamis modern, cocok untuk segala usia", 
-                price: 35000, 
-                category: "modern",
+                name: "Wolf Kite", 
+                desc: "He is cute, he is cuddly, and you don't need a pooper scooper when you take this mans best friend to the beach!! A real show stopper especially with the kids. Can be made to your specific colours. We have various sizes: 3 meters, 6 meters, and 9 meters. For more information, please contact us.", 
+                price: "Contact Us", 
+                category: "kite",
                 badge: "Popular",
-                emoji: "🌈",
-                image: "cerah.png"
+                emoji: "🐺",
+                image: "wolf.jpg"
             },
             { 
                 id: 3, 
-                name: "Layang-Layang Mini Anak", 
-                desc: "Layang-layang aman untuk anak-anak dengan ukuran yang pas di tangan kecil, mudah diterbangkan", 
-                price: 15000, 
-                category: "anak",
-                emoji: "👶",
-                image: "layang_anak.png"
+                name: "Octopus Kite", 
+                desc: "The 7-meter octopus inflatable kite is a unique and attractive kite with a giant octopus design that expands when flown. This kite features a unique and attractive octopus shape, with eight tentacles that expand when flown. This design makes it look like a real octopus swimming in the sky. Large Size, at 7 meters, this kite is quite large and can attract a lot of attention. Its large size also makes it more stable when flown.", 
+                price: "Contact Us", 
+                category: "kite",
+                badge: "Show Stopper",
+                emoji: "🐙",
+                image: "octopus.jpg"
             },
             { 
                 id: 4, 
-                name: "Layang-Layang Premium Gold", 
-                desc: "Layang-layang premium dengan desain eksklusif dan performa terbang yang sempurna, cocok untuk kolektor", 
-                price: 75000, 
-                category: "premium",
-                badge: "Premium",
-                emoji: "✨",
-                image: "premium.png"
-            },
-            { 
-                id: 5, 
-                name: "Layang-Layang Delta Sport", 
-                desc: "Layang-layang berbentuk delta dengan aerodinamika superior, ideal untuk kompetisi dan trik udara", 
-                price: 45000, 
-                category: "modern",
-                badge: "New",
-                emoji: "🏆",
-                image: "delta.png"
-            },
-            { 
-                id: 6, 
-                name: "Layang-Layang Batik Nusantara", 
-                desc: "Layang-layang dengan motif batik khas Indonesia yang indah dan autentik, sempurna sebagai kenang-kenangan", 
-                price: 40000, 
-                category: "tradisional",
-                badge: "Limited",
-                emoji: "🎭",
-                image: "motif.png"
-            },
-            { 
-                id: 7, 
-                name: "Layang-Layang LED Night", 
-                desc: "Layang-layang dengan lampu LED yang dapat menyala di malam hari, menciptakan pemandangan spektakuler", 
-                price: 65000, 
-                category: "premium",
-                badge: "New Tech",
-                emoji: "💡",
-                image: "night.png"
-            },
-            { 
-                id: 8, 
-                name: "Layang-Layang Karakter Kartun", 
-                desc: "Layang-layang dengan desain karakter kartun favorit anak-anak, warna cerah dan mudah terbang", 
-                price: 20000, 
-                category: "anak",
-                emoji: "🎨",
-                image: "kartun.png"
-            },
-            { 
-                id: 9, 
-                name: "Layang-Layang Giant XL", 
-                desc: "Layang-layang berukuran extra large untuk pengalaman terbang yang lebih menantang dan spektakuler", 
-                price: 85000, 
-                category: "premium",
-                badge: "Hot",
-                emoji: "🦅",
-                image: "giant.png"
-            },
+                name: "Trilobite Kite", 
+                desc: "The Trilobite Inflatable Kite is an easy-to-fly kite designed for everyone, from beginners to experienced flyers. Its lightweight and inflatable structure makes it simple to set up and launch, even in gentle winds. With its bright and eye-catching colors, this kite easily attracts attention and invites people to come closer to admire its beauty in the sky. Measuring 120 x 230 cm, it offers an impressive presence when flying, making it perfect for festivals, beach events, or personal fun. The color can be customized upon request, allowing you to choose the design that best fits your style or brand. Durable, fun, and visually striking.", 
+                price: "Contact Us", 
+                category: "kite",
+                badge: "Easy Fly",
+                emoji: "🦐",
+                image: "trilobite.jpg"
+            }
         ];
-
         let filteredProducts = [...products];
         let currentCategory = 'all';
 
@@ -934,10 +885,8 @@
         // Category Label
         function getCategoryLabel(category) {
             const labels = {
-                'tradisional': 'Tradisional',
-                'modern': 'Modern',
-                'anak': 'Anak-Anak',
-                'premium': 'Premium'
+                'kite': 'Kite',
+                'modern': 'Modern'
             };
             return labels[category] || category;
         }
